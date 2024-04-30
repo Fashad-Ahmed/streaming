@@ -7,5 +7,12 @@ services:
     ports:
       - "1935:1935"
 
+  auth_server:
+    build:
+      dockerfile: ./Dockerfile
+      context: .
+    ports:
+      - "8000:8000"
+
 volumes:
   streams-volumes:
