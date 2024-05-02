@@ -1,12 +1,12 @@
-package migration
+package handler
 
 import (
-	"github.com/ddiogoo/ddiogoo/auth_server/internal/config/db"
+	"github.com/ddiogoo/ddiogoo/auth_server/internal/config/db/connection"
 	"github.com/ddiogoo/ddiogoo/auth_server/internal/model"
 )
 
 func MigrationHandler() {
-	pg, err := db.ConfigDatabaseHandler()
+	pg, err := connection.ConfigDatabaseHandler()
 	if err != nil {
 		panic("failed to connect database")
 	}
