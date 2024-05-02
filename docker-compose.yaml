@@ -6,7 +6,9 @@ services:
       - streams-volumes:/hls/live
     ports:
       - "1935:1935"
-  
+    depends_on:
+      - auth_server
+
   auth_server:
     build:
       dockerfile: ./Dockerfile

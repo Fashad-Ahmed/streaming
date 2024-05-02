@@ -6,11 +6,16 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/ddiogoo/ddiogoo/auth_server/internal/migration"
+	"github.com/ddiogoo/ddiogoo/auth_server/internal/config/migration"
 	"github.com/gin-gonic/gin"
+	"github.com/joho/godotenv"
 )
 
 func main() {
+	err := godotenv.Load(".env")
+	if err != nil {
+		panic("Error loading .env file")
+	}
 	migration.MigrationHandler()
 	gin.SetMode(gin.ReleaseMode)
 	router := gin.Default()

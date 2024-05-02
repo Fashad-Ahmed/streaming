@@ -1,7 +1,7 @@
 package migration
 
 import (
-	"github.com/ddiogoo/ddiogoo/auth_server/internal/db"
+	"github.com/ddiogoo/ddiogoo/auth_server/internal/config/db"
 	"github.com/ddiogoo/ddiogoo/auth_server/internal/model"
 )
 
