@@ -6,10 +6,12 @@ import (
 	"log"
 	"net/http"
 
+	"github.com/ddiogoo/ddiogoo/auth_server/internal/migration"
 	"github.com/gin-gonic/gin"
 )
 
 func main() {
+	migration.MigrationHandler()
 	gin.SetMode(gin.ReleaseMode)
 	router := gin.Default()
 	router.POST("/auth", auth)
