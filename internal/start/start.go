@@ -1,7 +1,7 @@
 package start
 
 import (
-	"github.com/ddiogoo/ddiogoo/auth_server/internal/config/db/handler"
+	"github.com/ddiogoo/ddiogoo/auth_server/internal/config/db"
 	"github.com/ddiogoo/ddiogoo/auth_server/internal/config/env"
 	"github.com/ddiogoo/ddiogoo/auth_server/internal/config/routes"
 	"github.com/gin-gonic/gin"
@@ -9,7 +9,7 @@ import (
 
 func StartApplication() *gin.Engine {
 	env.EnvConfigurationHandler()
-	handler.MigrationHandler()
+	db.MigrationHandler()
 
 	gin.SetMode(gin.ReleaseMode)
 	router := gin.Default()
