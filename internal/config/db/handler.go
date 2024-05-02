@@ -10,6 +10,5 @@ func MigrationHandler() {
 		panic("failed to connect database")
 	}
 	pg.AutoMigrate(&model.LiveStreamingKey{})
-	pg.Create(model.NewLiveStreamingKey("LIVE DO DIOGO"))
-	pg.Create(model.NewLiveStreamingKey("LIVE DO GAULES"))
+	pg.Create(model.NewLiveStreamingKey("minhalive"))
 }
