@@ -6,13 +6,31 @@ services:
       - streams-volumes:/hls/live
     ports:
       - "1935:1935"
-
+  
   auth_server:
     build:
       dockerfile: ./Dockerfile
       context: .
     ports:
       - "8000:8000"
+    depends_on:
+      postgres_db:
+        condition: service_healthy
+
+  postgres_db:
+    image: postgres
+    restart: always
+    hostname: postgres
+    environment:
+      POSTGRES_PASSWORD: "streamkeys9283!@"
+      POSTGRES_DB: streamkeys
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 2s
+      timeout: 2s
+      retries: 30
 
 volumes:
   streams-volumes:
