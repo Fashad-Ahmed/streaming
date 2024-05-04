@@ -5,6 +5,7 @@ Live Streaming server that allows you to broadcast live using OBS Studio via the
 ## System Design
 
 ![dsd](https://lucid.app/publicSegments/view/c2e21dba-801a-41e6-a0a5-b4aff339d4e9/image.png)
+- Note: The system design was not created by me :)
 
 ## About
 
